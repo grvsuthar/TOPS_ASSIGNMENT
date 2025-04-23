@@ -1,0 +1,201 @@
+1) What is Power BI and how does it differ from Excel?
+Power BI is a Microsoft business analytics tool that enables users to visualize data, share insights, and create interactive dashboards and reports. It connects to a wide range of data sources and allows for complex modeling and real-time analytics.
+
+Differences from Excel:
+
+Data Visualization: Power BI offers advanced, interactive visuals.
+
+Data Modeling: Better suited for managing large datasets and building relationships.
+
+Real-time Dashboards: Power BI allows real-time streaming data.
+
+Deployment & Sharing: Power BI Service facilitates sharing dashboards securely online.
+
+Performance: Power BI handles large datasets more efficiently than Excel.
+
+2) Explain the concept of data modeling in Power BI.
+Data modeling is the process of connecting multiple tables using relationships, creating calculated columns, measures, and building a logical structure to support efficient querying. A proper data model allows Power BI to summarize and analyze data effectively.
+
+Key elements:
+
+Star/Snowflake schema
+
+Relationships (1:1, 1:* many-to-one)
+
+Fact and dimension tables
+
+DAX for measures and KPIs
+
+3) What are the different types of connections available in Power BI?
+Import: Data is loaded into Power BI’s in-memory model.
+
+DirectQuery: Queries are sent to the data source in real-time.
+
+Live Connection: Used with SSAS (SQL Server Analysis Services).
+
+Composite Models: Combines Import and DirectQuery in one model.
+
+4) How do you handle data transformation in Power BI?
+Using Power Query Editor, data transformation includes:
+
+Removing duplicates/nulls
+
+Changing data types
+
+Merging/Appending queries
+
+Creating conditional columns
+
+Unpivoting columns
+
+Filtering rows
+
+Applying custom transformations using M language
+
+5) What is DAX (Data Analysis Expressions) and why is it important in Power BI?
+DAX is a formula language used for creating custom calculations in Power BI. It's essential for:
+
+Creating measures, calculated columns, and tables
+
+Performing aggregations (SUM, AVERAGE, etc.)
+
+Time intelligence (YTD, MTD)
+
+Filtering context management
+
+6) Difference between calculated columns and measures in Power BI?
+
+Feature	Calculated Column	Measure
+Storage	Stored in the data model	Calculated on-the-fly
+Row vs Aggregate	Row-by-row calculation	Aggregated values
+Use Case	For filtering, relationships, grouping	For KPIs, aggregation in visuals
+7) How do you handle relationships between tables in Power BI?
+Relationships can be one-to-one, one-to-many, or many-to-many.
+
+Handled through the Model view by creating a relationship using primary and foreign keys.
+
+Use Manage Relationships to define cardinality and cross-filter direction.
+
+8) What is the purpose of a Power BI Gateway?
+Gateways act as bridges between on-premises data sources and the Power BI Service. Types:
+
+Personal Gateway: For individual use.
+
+Enterprise Gateway: Shared by many, supports scheduling and refreshes.
+
+9) How can you schedule data refresh in Power BI Service?
+Navigate to the dataset settings in Power BI Service.
+
+Configure scheduled refresh using Gateway if data is on-premise.
+
+Set refresh frequency (daily, weekly, hourly) and time zones.
+
+10) Explain the concept of row-level security in Power BI.
+RLS restricts data access for specific users by defining roles and filters on tables. Implemented in:
+
+Power BI Desktop: Create roles with DAX filters.
+
+Power BI Service: Assign users to those roles.
+
+11) What is Power BI Desktop and how does it differ from Power BI Service?
+
+Feature	Power BI Desktop	Power BI Service
+Purpose	Data modeling, transformation, report design	Online sharing, collaboration, dashboards
+Data Refresh	Manual	Scheduled
+Deployment	Create and publish	Consume and distribute
+12) Explain the concept of Direct Query in Power BI.
+DirectQuery keeps data at the source. Power BI sends queries to fetch data only when needed. Pros:
+
+Real-time access to data
+Cons:
+
+Performance depends on the source
+
+Limited DAX and modeling capabilities
+
+13) What are Power BI templates and how are they useful?
+A .pbit file contains report definitions, data model (without data), and parameters. Useful for:
+
+Reusing reports across teams
+
+Deploying similar reports for different clients/data sources
+
+14) How do you handle incremental data refresh in Power BI?
+Use parameters for range filtering (e.g., date).
+
+Define incremental refresh policy in Power BI Desktop.
+
+Publish to Power BI Service. Useful for large datasets—only refreshes new/changed data.
+
+15) What is the role of Power Query in Power BI?
+Power Query is the ETL (Extract, Transform, Load) engine in Power BI. It allows:
+
+Connecting to various data sources
+
+Transforming data
+
+Shaping and cleaning data using M language
+
+16) Difference between calculated columns and calculated tables in Power BI?
+
+Feature	Calculated Column	Calculated Table
+Purpose	Add a column to an existing table	Create a new table using DAX
+Storage	Stored in existing table	Independent table in model
+Use Case	For slicers, visuals, filters	Creating lookup tables, scenarios
+17) How do you create custom visuals in Power BI?
+Use R or Python scripts
+
+Download from AppSource
+
+Develop using Power BI Visuals SDK (TypeScript + D3.js) and package as .pbiviz
+
+Import into report using “Import from file” or “Marketplace”
+
+18) Best practices for optimizing performance in Power BI?
+Use star schema
+
+Avoid complex calculated columns/measures
+
+Reduce data model size
+
+Filter data during load
+
+Use aggregations
+
+Limit visuals on a page
+
+Disable auto-date hierarchy
+
+19) Integrating Power BI with Azure and Office 365
+Azure SQL DB/Data Lake: As data sources
+
+Azure Synapse: Advanced analytics
+
+Azure ML: Embed predictive models
+
+Microsoft Teams, SharePoint, Excel: Embed reports, collaborate
+
+Power Automate/PowerApps: Workflow automation
+
+20) Explain the concept of aggregations in Power BI.
+Aggregations pre-calculate summaries (e.g., sum, avg) of detailed data. Power BI can use these summaries instead of querying large datasets—improves performance, especially in DirectQuery mode.
+
+21) Handling error handling and data quality in Power BI?
+Power Query: Use "Remove Errors", "Replace Values", conditional columns
+
+Profile Data: Use "Column Quality", "Column Distribution"
+
+Custom logic: Use try/otherwise expressions
+
+Validation Rules: Built-in transformations for null checks, type errors
+
+22) Purpose of Power BI Embedded and when to use it
+Power BI Embedded allows you to integrate Power BI reports and dashboards into your custom applications using REST APIs and SDKs.
+
+Use cases:
+
+Customer-facing applications
+
+SaaS applications requiring analytics
+
+Embedding dashboards in portals without exposing Power BI UI
